@@ -7,9 +7,11 @@ import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 export default function Home() {
   return (
-    <HeroHighlight className="">
-      <Hero />
-      <HomeInput />
-    </HeroHighlight>
+    <>
+      <HeroHighlight>
+        <Hero />
+        <HomeInput />
+      </HeroHighlight>
+    </>
   );
 }
