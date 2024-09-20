@@ -1,16 +1,15 @@
-import { HomeInput } from "@/components/home/input";
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { currentUser } from "@clerk/nextjs/server";
+// "use client"
 
-export default async function Home() {
+// import { HomeInput } from "@/components/home/input";
+import Hero from "@/components/home/hero";
+import { HomeInput } from "@/components/home/input";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
+
+export default function Home() {
   return (
-    <BackgroundBeamsWithCollision className="items-center justify-items-center h-screen">
-      <main>
-        <h1 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
-          is-a.dev registrar
-        </h1>
-        <HomeInput />
-      </main>
-    </BackgroundBeamsWithCollision>
+    <HeroHighlight className="">
+      <Hero />
+      <HomeInput />
+    </HeroHighlight>
   );
 }

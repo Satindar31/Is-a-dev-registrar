@@ -4,6 +4,6 @@
     "@typescript-eslint/no-explicit-any": "off",
     "no-unused-vars": "warn",
     "prefer-const": "warn",
-    "no-unused-expressions": "warn",
+    "no-unused-expressions": "warn"
   }
 }
