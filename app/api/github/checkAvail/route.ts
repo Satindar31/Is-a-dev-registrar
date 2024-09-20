@@ -34,8 +34,8 @@ export async function GET(req: NextRequest) {
       });      
 
       return new Response("Domain is not available", { status: 400 });
-    } catch (e: any) {
-      if(e.status === 404) {
+    } catch (e) {
+      if (e instanceof Error && (e as any).status === 404) {
         return new Response("Domain is available", { status: 200 });
       }
       console.error(e);
