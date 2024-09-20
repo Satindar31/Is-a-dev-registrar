@@ -43,31 +43,27 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
             Owner: {owner?.username || "Loading..."}
           </p>
           <ul>
-            <li>
-              {owner?.email ? (
-                <Link href={"mailto:" + owner.email}>Email</Link>
-              ) : (
-                "No Email"
-              )}
-            </li>
-            <li>
-              {owner?.discord ? (
-                <Link href={"https://discord.com/users/" + owner.discord}>
-                  Discord
-                </Link>
-              ) : (
-                "No Discord"
-              )}
-            </li>
-            <li>
-              {owner?.twitter ? (
-                <Link href={"https://twitter.com/" + owner.twitter}>
-                  Twitter
-                </Link>
-              ) : (
-                "No Twitter"
-              )}
-            </li>
+            {owner?.email ? (
+              <Link href={"mailto:" + owner.email}>
+                <li>Email</li>
+              </Link>
+            ) : (
+              <li>No email</li>
+            )}
+            {owner?.discord ? (
+              <Link href={"https://discord.com/users/" + owner.discord}>
+                <li>Discord</li>
+              </Link>
+            ) : (
+              <li>No Discord</li>
+            )}
+            {owner?.twitter ? (
+              <Link href={"https://twitter.com/" + owner.twitter}>
+                <li>Twitter</li>
+              </Link>
+            ) : (
+              <li>No Twitter</li>
+            )}
           </ul>
         </Suspense>
       </div>
