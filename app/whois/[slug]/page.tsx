@@ -47,7 +47,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
               {owner?.email ? (
                 <Link href={"mailto:" + owner.email}>Email</Link>
               ) : (
-                "No Email" || "Loading..."
+                "No Email"
               )}
             </li>
             <li>
@@ -56,7 +56,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
                   Discord
                 </Link>
               ) : (
-                "No Discord" || "Loading..."
+                "No Discord"
               )}
             </li>
             <li>
@@ -65,7 +65,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
                   Twitter
                 </Link>
               ) : (
-                "No Twitter" || "Loading..."
+                "No Twitter"
               )}
             </li>
           </ul>
