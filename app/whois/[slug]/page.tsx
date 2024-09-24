@@ -4,6 +4,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import Link from "next/link";
 import { Suspense, useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export default function WhoisPage({ params }: { params: { slug: string } }) {
   const [owner, setOwner] = useState<{
@@ -14,6 +15,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
   } | null>(null);
 
   useEffect(() => {
+    toast.loading("Fetching owner");
     fetch(`/api/github/whois?whois=${params.slug}`, {
       next: {
         revalidate: 60,
@@ -21,6 +23,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
     })
       .then((res) => {
         if (res.status === 404) {
+          toast.error("Domain not found.");
           return { error: "Domain not found." };
         }
         return res.json();
@@ -28,6 +31,7 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
       .then((data) => {
         const cont: any = JSON.parse(atob(data.content));
         setOwner(cont.owner);
+        return toast.success("Owner fetched successfully");
       });
   }, [params.slug]);
 

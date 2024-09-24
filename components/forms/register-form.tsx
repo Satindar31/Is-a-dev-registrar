@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { useSearchParams } from "next/navigation";
 import { RegisterModal } from "../modals/register-modal";
+import { toast } from "sonner";
 
 export function RegisterDomainForm() {
   const domain = useSearchParams().get("domain");
@@ -34,6 +35,7 @@ export function RegisterDomainForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setDisabled(true);
+    toast.loading("Generating JSON");
     fetch("/api/generateJSON", {
       method: "POST",
       body: JSON.stringify({
@@ -48,10 +50,12 @@ export function RegisterDomainForm() {
       if (res.ok) {
         res.json().then((data) => {
           setData(data)
+          toast.success("JSON generated successfully");
           setDisabled(false);
           setShowModal(true);
         });
       } else {
+        toast.error("Error generating JSON.");
         setDisabled(false);
       }
     });

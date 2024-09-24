@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     try {
       await kit.rest.repos.createOrUpdateFileContents({
         owner: data.owner.username,
-        path: `domains/${subdomain}.json`,
+        path: `domains/${subdomain.toLocaleLowerCase()}.json`,
         repo: "register",
         message: "Add domain",
         content: Buffer.from(JSON.stringify(data)).toString("base64"),
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
           head: `${data.owner.username}:main`,
           owner: "is-a-dev",
           repo: "register",
-          title: `Add ${subdomain}.is-a.dev (automated)`,
+          title: `Add ${subdomain.toLocaleLowerCase()}.is-a.dev (automated)`,
           body: `Automated PR to add ${subdomain}.is-a.dev`,
           head_repo: `${data.owner.username}/register`,
           maintainer_can_modify: true,

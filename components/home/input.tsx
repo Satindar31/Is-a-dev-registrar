@@ -3,6 +3,7 @@
 import { PlaceholdersAndVanishInput } from "@/components/ui/placeholders-and-vanish-input";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function HomeInput() {
 
@@ -28,9 +29,11 @@ export function HomeInput() {
         if (res.status === 200) {
             console.log("Domain is available");
             setIsAvailable(true);
+            toast.success("Domain is available");
         } else if(res.status === 400) {
             console.log("Domain is not available");
             setIsAvailable(false);
+            toast.error("Domain is not available");
         }
     });
   };

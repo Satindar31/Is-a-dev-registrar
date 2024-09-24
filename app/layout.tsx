@@ -9,6 +9,8 @@ import {
 } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
+import { Toaster } from 'sonner'
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -31,6 +33,7 @@ export default function RootLayout({
     }}>
       <html lang="en">
         <body className={`${geistSans.className} dark min-h-screen`}>
+          <Toaster richColors />
           <SignedOut>
             <SignInButton />
           </SignedOut>

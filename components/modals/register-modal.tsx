@@ -8,11 +8,13 @@ import {
   ModalTrigger,
 } from "../ui/animated-modal";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function RegisterModal({ data, subdomain }: { data: string, subdomain: string }) {
     const router = useRouter()
 
     function handleClick() {
+      toast.loading("Sending PR");
         fetch("/api/github/sendPR", {
             method: "POST",
             body: JSON.stringify({
@@ -22,6 +24,7 @@ export function RegisterModal({ data, subdomain }: { data: string, subdomain: st
             cache: "no-cache",
         }).then((res) => {
             if (res.ok) {
+              toast.success("PR sent successfully");
                 res.json().then((data) => {
                     router.push(data.URL)
                 });
@@ -55,7 +58,7 @@ export function RegisterModal({ data, subdomain }: { data: string, subdomain: st
           </ModalContent>
           <ModalFooter className="gap-4">\
             <p>Make sure you have a fork of the is-a.dev/register repo before pressing send now button</p>
-            <button onClick={handleClick} className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+            <button type="button" onClick={handleClick} className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
               Send Now!
             </button>
           </ModalFooter>
