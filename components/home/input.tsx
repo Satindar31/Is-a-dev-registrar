@@ -45,7 +45,7 @@ export function HomeInput() {
         onSubmit={onSubmit}
       />
       {isAvailable == true ? (
-        <p className="text-green-500">Domain is available</p>
+        <p className="text-green-500">Domain is available. <Link href={"/domain/register?domain=" + inputValue}>Get it</Link></p>
       ) : isAvailable == false ? (
         <p className="text-red-500">Domain is not available. <br /><Link href={"/whois/" + inputValue}>See who ownes it</Link></p>
       ) : (

@@ -6,6 +6,7 @@
     "prefer-const": "warn",
     "no-unused-expressions": "warn",
     "@typescript-eslint/no-unused-expressions": "warn",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-require-imports": "warn"
   }
 }

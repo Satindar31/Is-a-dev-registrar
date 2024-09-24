@@ -33,8 +33,8 @@ export default function WhoisPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="h-screen antialiased flex justify-center">
-      <div className="z-10 w-full rounded-md bg-neutral-950 relative flex flex-col items-center justify-center bg-transparent">
-        <div className="max-w-2xl mx-auto p-4">
+      <div className="z-10 w-full rounded-md relative flex flex-col items-center justify-center bg-transparent">
+        <div className="max-w-3xl mx-auto p-4">
           
           <Link href={owner ? `https://${params.slug}.is-a.dev` : "#"}><h1 className="relative z-10 text-lg md:text-7xl  bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  text-center font-sans font-bold">
             {params.slug}.is-a.dev
