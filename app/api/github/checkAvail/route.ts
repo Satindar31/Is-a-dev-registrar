@@ -5,8 +5,11 @@ import { Octokit } from "octokit";
 export async function GET(req: NextRequest) {
   const url = new URL(req.url)
 
-  const domain = url.searchParams.get("domain")
-  console.log(domain)
+  let domain = url.searchParams.get("domain")
+  if (!domain) {
+    return new Response("No domain provided", { status: 418 });
+  }
+  domain = domain.toLowerCase()
 
   const { userId } = auth();
   
