@@ -1,3 +1,6 @@
+# Sunsetting the project
+After receiving a message from a mantainer of is-a.dev, they informed me about the possibilities of multiple low quality PRs being made by users of this site. Therefore, I have decided to sunset the project and archive it. The code is still usable and you can deploy it to vercel, netlify or on your own backend and use it.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
