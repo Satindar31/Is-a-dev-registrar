@@ -43,6 +43,8 @@ export async function POST(req: Request) {
     recordTypeString = "AAAA";
   } else if (recordType === 3) {
     recordTypeString = "MX";
+  } else if (recordType === 6) {
+    recordTypeString = "URL"
   } else {
     recordTypeString = "TXT";
   }

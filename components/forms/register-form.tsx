@@ -159,6 +159,14 @@ export function RegisterDomainForm() {
             />
             <Label htmlFor="r5">TXT</Label>
           </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem
+              onClick={() => setChecked2(6)}
+              value="compact"
+              id="rd6"
+            />
+            <Label htmlFor="r6">URL</Label>
+          </div>
           <Input
             value={record}
             onChange={(e) => setRecord(e.target.value)}
