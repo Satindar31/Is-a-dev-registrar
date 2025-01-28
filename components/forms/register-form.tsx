@@ -154,15 +154,16 @@ export function RegisterDomainForm() {
           <div className="flex items-center space-x-2">
             <RadioGroupItem
               onClick={() => setChecked2(4)}
-              value="compact"
+              value="TXT"
               id="rd5"
             />
             <Label htmlFor="r5">TXT</Label>
           </div>
+
           <div className="flex items-center space-x-2">
             <RadioGroupItem
               onClick={() => setChecked2(6)}
-              value="compact"
+              value="URL"
               id="rd6"
             />
             <Label htmlFor="r6">URL</Label>
