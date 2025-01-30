@@ -25,7 +25,13 @@ export const metadata: Metadata = {
   openGraph: {
     "title": "Satindar's Registration Site",
     "description": "I was bored okay?",
-    "images": ["sd"]
+    "twitter": {
+    card: 'summary_large_image',
+    title: "Satindar's Registration Site",
+    description: 'This shit is really bad btw',
+    creator: '@satindar31',
+    images: ['http://zipline.satindar-is.me/u/qE9n2f.png'],
+  },
   }
 };
 
