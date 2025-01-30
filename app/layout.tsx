@@ -10,6 +10,7 @@ import {
 import { dark } from "@clerk/themes";
 
 import { Toaster } from 'sonner'
+import Analytics from "../components/analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,6 +21,12 @@ const geistSans = localFont({
 export const metadata: Metadata = {
   title: "is-a.dev Registrar",
   description: "Check if a domain is available for registration",
+
+  openGraph: {
+    "title": "Satindar's Registration Site",
+    "description": "I was bored okay?",
+    "images": ["sd"]
+  }
 };
 
 export default function RootLayout({
@@ -41,6 +48,7 @@ export default function RootLayout({
             {children}
           </SignedIn>
         </body>
+        <Analytics />
       </html>
     </ClerkProvider>
   );
