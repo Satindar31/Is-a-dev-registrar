@@ -18,6 +18,10 @@ const geistSans = localFont({
   weight: "100 900",
 });
 
+export const viewport: Viewport = {
+  themeColor: '#D95F76',
+}
+
 export const metadata: Metadata = {
   title: "is-a.dev Registrar",
   description: "Check if a domain is available for registration",
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
     description: 'This shit is really bad btw',
     creator: '@satindar31',
     images: ['http://zipline.satindar-is.me/u/qE9n2f.png'],
-  },
+ },
   
   openGraph: {
     "title": "Satindar's Registration Site",
