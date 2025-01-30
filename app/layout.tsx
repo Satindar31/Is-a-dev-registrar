@@ -22,16 +22,17 @@ export const metadata: Metadata = {
   title: "is-a.dev Registrar",
   description: "Check if a domain is available for registration",
 
-  openGraph: {
-    "title": "Satindar's Registration Site",
-    "description": "I was bored okay?",
-    "twitter": {
+  "twitter": {
     card: 'summary_large_image',
     title: "Satindar's Registration Site",
     description: 'This shit is really bad btw',
     creator: '@satindar31',
     images: ['http://zipline.satindar-is.me/u/qE9n2f.png'],
   },
+  
+  openGraph: {
+    "title": "Satindar's Registration Site",
+    "description": "I was bored okay?",
   }
 };
 
