@@ -1,5 +1,6 @@
 import { RegisterDomainForm } from "@/components/forms/register-form";
 import { TextRevealCard } from "@/components/ui/text-reveal-card";
+import { UserButton } from '@clerk/nextjs'
 
 export default function RegisterPage() {
   
@@ -12,6 +13,7 @@ export default function RegisterPage() {
           revealText="With is-a.dev right now!"
           className="text-2xl md:text-7xl font-black bg-transparent border-0 text-center p-0 m-0"
         />
+        <UserButton />
       </div>
       <RegisterDomainForm />
     </div>
